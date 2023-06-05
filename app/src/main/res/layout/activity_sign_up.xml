@@ -1,0 +1,73 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<layout
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="signupviewmodel"
+            type="com.example.mvvmarch.viewmodel.AuthViewModel" />
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height = "match_parent">
+
+
+
+
+
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/editTextusername"
+            android:layout_margin="32dp"
+            android:hint="@string/email"
+            android:layout_alignParentTop="true"
+            android:text="@={signupviewmodel.email}"
+
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id = "@+id/editTextuserpassword"
+            android:layout_margin="32dp"
+            android:hint="@string/passowrd"
+            android:layout_below="@+id/editTextusername"
+            android:text="@={signupviewmodel.password}"
+            />
+
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextuserpassword"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="@{() -> signupviewmodel.onSignUpButtonClick()}"
+            android:text="Sign Up" />
+
+
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/progress_bar"
+            android:visibility="gone"
+
+            />
+
+
+    </RelativeLayout>
+
+</layout>
