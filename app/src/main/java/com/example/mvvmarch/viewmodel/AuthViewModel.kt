@@ -38,5 +38,18 @@ class AuthViewModel : ViewModel() {
 
     }
 
+    fun onForgetPasswordButtonClick() {
+        authListner?.onStarted()
+        if (email.isNullOrEmpty() || password.isNullOrEmpty()) {
+            authListner?.onFauiler("The credentails are not valid")
+            return
+        }
+        authListner?.onSuccess("User Signed Up")
+
+    }
+
+
+
+
 
 }

@@ -20,6 +20,7 @@ class LogInActivity : AppCompatActivity(), AuthListner {
         authViewModel.authListner=this
 
 
+
     }
 
     override fun onStarted() {
